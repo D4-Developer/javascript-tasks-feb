@@ -27,7 +27,12 @@ function factorial(n) {
 }
 
 function sumbitAction() {
-    const input = inputObj.valueAsNumber;
+    const input = Number(inputObj.valueAsNumber);
+    // if (typeof input != Number) {
+    //     outputObj.textContent = 'wrong input!!!! provide a number to calculate factorial.'
+    //     return;
+    // }
+
     const output = input + '! = ' + factorial(Number(input));
     outputObj.textContent = output;
     console.log(output);
