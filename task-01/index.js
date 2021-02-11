@@ -1,5 +1,9 @@
 'use strict'
 
+const inputObj = document.querySelector('.input');
+const btnObj = document.querySelector('.submit');
+const outputObj = document.querySelector('.output');
+
 function multiplyWithString(a, b) {
     
     const product = Array(a.length+b.length).fill(0);
@@ -21,5 +25,12 @@ function factorial(n) {
         fact = multiplyWithString(fact, i.toString());
     return fact;
 }
-console.log('Factorial of 1000');
-console.log(factorial(1000));
+
+function sumbitAction() {
+    const input = inputObj.valueAsNumber;
+    const output = input + '! = ' + factorial(Number(input));
+    outputObj.textContent = output;
+    console.log(output);
+}
+
+btnObj.addEventListener('click', sumbitAction);
